@@ -25,7 +25,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>2022- ... : Ecole 42</li>
-        <li>2017 - 2019 : CNAM - Master's degree in Business-Marketing</li>
+        <li>2017 - 2019 : CNAM - Master&apos;s degree in Business-Marketing</li>
       </ul>
     ),
   },
@@ -63,9 +63,9 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             Transitioning from a senior marketing role to computer science through an intensive course at École 42, I bring a unique blend of expertise in project management, strategy, and leadership. Proficient in C, C++, Python, and other modern technologies, my goal is to specialize in Data Science to leverage data for business performance.
             <br/>
-            My flagship project, 'Transcendence', is a complex online platform based on the classic Pong game, showcasing my skills in real-time features and modern tech stacks like NestJS and NextJS.
+            My flagship project, &apos;Transcendence&apos;, is a complex online platform based on the classic Pong game, showcasing my skills in real-time features and modern tech stacks like NestJS and NextJS.
             <br/>
-            I'm seeking a 4-6 month internship to apply my cross-disciplinary skills and contribute to meaningful projects. Contact me for opportunities aligning with this profile, as I'm keen to add value by bridging business and technology.
+            I&apos;m seeking a 4-6 month internship to apply my cross-disciplinary skills and contribute to meaningful projects. Contact me for opportunities aligning with this profile, as I&apos;m keen to add value by bridging business and technology.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
