@@ -2,11 +2,11 @@ import {
     Body,
     Container,
     Html,
+    Head,
+    Heading,
     Preview,
     Text,
   } from "@react-email/components";
-  import { Head } from '@react-email/head';
-  import { Heading } from '@react-email/heading';
   import * as React from "react";
   
   interface WaitlistEmailProps {
