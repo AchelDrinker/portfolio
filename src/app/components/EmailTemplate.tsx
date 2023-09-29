@@ -11,20 +11,21 @@ import {
   
   interface EmailTemplateProps {
     name: string;
-  }
+    message: string;
+  } 
   
   export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     name,
+    message,
   }) => (
     <Html>
       <Head />
       <Preview>Un message a été reçu depuis le portfolio</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>Coming Soon.</Heading>
+          <Heading style={h1}>You have received this message from the portfolio.</Heading>
           <Text style={text}>
-            Thank you {name} for joining our waitlist and for your patience. We
-            will send you a note when we have something new to share.
+            {name} sent this : {message}
           </Text>
         </Container>
       </Body>

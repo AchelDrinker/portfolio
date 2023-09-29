@@ -5,6 +5,36 @@ import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+  
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email = event.currentTarget.email.value;
+    const subject = event.currentTarget.subject.value;
+    const message = event.currentTarget.message.value;
+
+    try {
+        const response = await fetch('/api/route', { // Remplacez '/api/route' par l'URL de votre API
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                subject,
+                message,
+            }),
+        });
+
+        if (response.ok) {
+            console.log("Email envoyé avec succès !");
+        } else {
+            console.log("Erreur lors de l'envoi de l'email");
+        }
+    } catch (error) {
+        console.error("Une erreur s'est produite lors de l'envoi de l'email", error);
+    }
+};
+
   return (
     <section
       id="contact"
@@ -31,7 +61,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div className="z-10">
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -77,13 +107,13 @@ const EmailSection = () => {
             />
           </div>
           <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-900 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-900 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
     </section>
   );
 };
