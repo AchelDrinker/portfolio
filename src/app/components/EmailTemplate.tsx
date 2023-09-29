@@ -9,11 +9,11 @@ import {
   } from "@react-email/components";
   import * as React from "react";
   
-  interface WaitlistEmailProps {
+  interface EmailTemplateProps {
     name: string;
   }
   
-  export const WaitlistEmail: React.FC<Readonly<WaitlistEmailProps>> = ({
+  export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     name,
   }) => (
     <Html>
@@ -31,7 +31,7 @@ import {
     </Html>
   );
   
-  export default WaitlistEmail;
+  export default EmailTemplate;
   
   const main = {
     backgroundColor: "#000000",
