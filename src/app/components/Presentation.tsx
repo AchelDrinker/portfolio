@@ -10,7 +10,7 @@ const Presentation = () => {
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400">
-              Hello, I'm {" "}
+              Hello, I&apos;m {" "}
             </span>
             <br />
             <TypeAnimation
@@ -30,7 +30,7 @@ const Presentation = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          I'm currently retraining in the IT field and I'm looking for a 4 to 6 months internship in Development, Data or Machine Learning
+          I&apos;m currently retraining in the IT field and I&apos;m looking for a 4 to 6 months internship in Development, Data or Machine Learning
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-200 text-white">
