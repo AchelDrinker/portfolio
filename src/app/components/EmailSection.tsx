@@ -14,7 +14,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     const message = event.currentTarget.message.value;
 
     try {
-        const response = await fetch('/api/route', { // Remplacez '/api/route' par l'URL de votre API
+        const response = await fetch('/api/route', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

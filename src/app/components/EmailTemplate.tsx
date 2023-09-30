@@ -16,7 +16,6 @@ import {
   } 
   
   export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-    name,
     message,
   }) => (
     <Html>
@@ -26,7 +25,7 @@ import {
         <Container style={container}>
           <Heading style={h1}>You have received this message from the portfolio.</Heading>
           <Text style={text}>
-            {name} sent this : {message}
+            This is your message : {message}
           </Text>
         </Container>
       </Body>
