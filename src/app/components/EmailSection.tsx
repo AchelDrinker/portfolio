@@ -7,11 +7,10 @@ import Image from "next/image";
 
 const EmailSection = () => {
   
-  const [showPopup, setShowPopup] = useState(false);  // État pour le pop-up
+  const [showPopup, setShowPopup] = useState(false);
 
-  const closePopup = () => setShowPopup(false);  // Fonction pour fermer le pop-up
+  const closePopup = () => setShowPopup(false);
 
-  
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formElement = event.currentTarget;
@@ -48,8 +47,6 @@ const EmailSection = () => {
       }
     }
   };
-  
-
 
   return (
     <section
@@ -58,18 +55,22 @@ const EmailSection = () => {
     >
       {/* Pop-up */}
       {showPopup && (
-      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white rounded p-5">
-          <h2>Your email has been sent</h2>
-          <button 
-            className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-200 text-white"
-            onClick={closePopup}
-          >
-            Close
-          </button>
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-[#121212] p-10 flex flex-col items-center relative">
+            <img src="/images/email_sent.png" alt="email_sent" width={64} className="mb-4"/>
+            <h2 className="text-center">Your email has been sent</h2>
+            <div className="flex justify-center mt-4">
+              <button 
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-200 text-white"
+                onClick={closePopup}
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
       )}
+
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
@@ -153,7 +154,7 @@ const EmailSection = () => {
           </div>
           <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-900 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+          className="text-white font-medium py-2.5 px-5 rounded-lg w-full bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:opacity-75"
         >
           Send Message
         </button>

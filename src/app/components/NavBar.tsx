@@ -36,7 +36,7 @@ function NavBar() {
         <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"https://www.linkedin.com/in/hugomartineu"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-5xl  font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400"
         >
           HUGO MARTINEU
         </Link>
