@@ -34,11 +34,11 @@ const Presentation = () => {
           I&apos;m currently retraining in the IT field and I&apos;m looking for a 4 to 6 months internship in Development, Data or Machine Learning
           </p>
           <div>
-            <Link href={"https://www.linkedin.com/in/hugomartineu"}>
+            <a href="https://www.linkedin.com/in/hugomartineu" target="_blank" rel="noopener noreferrer">
               <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-200 text-white">
                 Hire me
               </button>
-            </Link>
+            </a>
             <a href="/elements/CV-HUGO-MARTINEU-STAGE.pdf" download>
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-800 text-white mt-3">
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
