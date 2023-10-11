@@ -1,6 +1,6 @@
-import { NextApiResponse, NextApiRequest, NextApiHandler } from "next";
-import { Resend } from "resend";
 import { EmailTemplate } from '../../src/app/components/EmailTemplate';
+import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
+import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -9,21 +9,19 @@ const emailHandler: NextApiHandler = async (req: NextApiRequest, res: NextApiRes
     return res.status(405).end();
   }
 
-  const { email, subject, message } = req.body;
-  
+  const {fullname, email, subject, message } = req.body;
+
   try {
     const data = await resend.emails.send({
       from: `Portfolio Contact <${email}>`,
-      to: ["hugo.martineu@gmail.com"],
+      to: ['hugo.martineu@gmail.com'],
+      name : fullname,
       subject: subject,
       text: message,
-      react: EmailTemplate({
-        name: '',
-        message: message,
-      }),
+      react: EmailTemplate({ name: fullname, subject:subject, message: message }),
     });
 
-    return res.json(data);
+    return res.status(200).json(data);
   } catch (error) {
     console.error("Erreur d'envoi de l'email: ", error);
     return res.status(500).json({ error });

@@ -9,6 +9,7 @@ const EmailSection = () => {
   
 const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const fullname = event.currentTarget.fullname.value;
     const email = event.currentTarget.email.value;
     const subject = event.currentTarget.subject.value;
     const message = event.currentTarget.message.value;
@@ -20,6 +21,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                fullname,
                 email,
                 subject,
                 message,
@@ -63,6 +65,21 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       </div>
       <div className="z-10">
         <form className="flex flex-col" onSubmit={handleSubmit}>
+        <div className="mb-6">
+            <label
+              htmlFor="fullname"
+              className="text-white block mb-2 text-sm font-medium"
+            >
+              Your name
+            </label>
+            <input
+              type="text"
+              id="fullname"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="John Doe"
+            />
+          </div>
           <div className="mb-6">
             <label
               htmlFor="email"
