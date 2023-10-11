@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -7,7 +7,12 @@ import Image from "next/image";
 
 const EmailSection = () => {
   
-const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const [showPopup, setShowPopup] = useState(false);  // État pour le pop-up
+
+  const closePopup = () => setShowPopup(false);  // Fonction pour fermer le pop-up
+
+  
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const fullname = event.currentTarget.fullname.value;
     const email = event.currentTarget.email.value;
@@ -29,7 +34,9 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         });
 
         if (response.ok) {
-            console.log("Email envoyé avec succès !");
+          console.log("Email envoyé avec succès !");
+          event.currentTarget.reset();
+          setShowPopup(true);
         } else {
             console.log("Erreur lors de l'envoi de l'email");
         }
@@ -38,11 +45,26 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     }
 };
 
+
   return (
     <section
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
+      {/* Pop-up */}
+      {showPopup && (
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="bg-white rounded p-5">
+          <h2>Your email has been sent</h2>
+          <button 
+            className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-blue-600 via-indigo-500 to-green-400 hover:bg-slate-200 text-white"
+            onClick={closePopup}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      )}
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">

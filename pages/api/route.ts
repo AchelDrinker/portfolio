@@ -13,9 +13,8 @@ const emailHandler: NextApiHandler = async (req: NextApiRequest, res: NextApiRes
 
   try {
     const data = await resend.emails.send({
-      from: `Portfolio Contact <${email}>`,
+      from: `Portfolio : ${fullname} <${email}>`,
       to: ['hugo.martineu@gmail.com'],
-      name : fullname,
       subject: subject,
       text: message,
       react: EmailTemplate({ name: fullname, subject:subject, message: message }),
