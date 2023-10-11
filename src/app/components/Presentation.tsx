@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
 
@@ -16,7 +15,7 @@ const Presentation = () => {
             <br />
             <TypeAnimation
               sequence={[
-                'Hugo',
+                'Hugo Martineu',
                 1000,
                 'Student at 42',
                 1000,
