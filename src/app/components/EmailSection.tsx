@@ -14,12 +14,15 @@ const EmailSection = () => {
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const fullname = event.currentTarget.fullname.value;
-    const email = event.currentTarget.email.value;
-    const subject = event.currentTarget.subject.value;
-    const message = event.currentTarget.message.value;
-
-    try {
+    const formElement = event.currentTarget;
+  
+    if (formElement) {
+      const fullname = formElement.fullname.value;
+      const email = formElement.email.value;
+      const subject = formElement.subject.value;
+      const message = formElement.message.value;
+  
+      try {
         const response = await fetch('/api/route', {
             method: 'POST',
             headers: {
@@ -32,18 +35,20 @@ const EmailSection = () => {
                 message,
             }),
         });
-
+  
         if (response.ok) {
           console.log("Email envoyé avec succès !");
-          event.currentTarget.reset();
+          formElement.reset();
           setShowPopup(true);
         } else {
             console.log("Erreur lors de l'envoi de l'email");
         }
-    } catch (error) {
-        console.error("Une erreur s'est produite lors de l'envoi de l'email", error);
+      } catch (error) {
+          console.error("Une erreur s'est produite lors de l'envoi de l'email", error);
+      }
     }
-};
+  };
+  
 
 
   return (
