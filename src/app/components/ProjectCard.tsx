@@ -13,9 +13,9 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }: ProjectCardProps) => {
     return (
-        <div>
+        <div className="rounded-xl overflow-hidden">
             <div
-                className="h-52 md:h-72 rounded-t-xl relative group"
+                className="h-52 md:h-72 relative group"
                 style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
             >
                 <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
@@ -27,12 +27,14 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }: Project
                     </Link>
                 </div>
             </div>
-            <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
+            <div className="text-white mt-3 py-6 px-4">
                 <h5 className="text-xl font-semibold mb-2">{title}</h5>
                 <p className="text-[#ADB7BE]">{description}</p>
             </div>
         </div>
     );
 };
+
+
 
 export default ProjectCard;
