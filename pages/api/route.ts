@@ -13,7 +13,7 @@ const emailHandler: NextApiHandler = async (req: NextApiRequest, res: NextApiRes
 
   try {
     const data = await resend.emails.send({
-      from: `Portfolio : ${fullname} <${email}>`,
+      from: "onboarding@resend.dev",
       to: ['hugo.martineu@gmail.com'],
       subject: subject,
       text: message,
