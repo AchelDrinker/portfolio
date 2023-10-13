@@ -14,10 +14,10 @@ const emailHandler: NextApiHandler = async (req: NextApiRequest, res: NextApiRes
   try {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: ['hugo.martineu@gmail.com'],
+      to: "hugo.martineu@gmail.com",
       subject: subject,
       text: message,
-      react: EmailTemplate({ name: fullname, subject:subject, message: message }),
+      react: EmailTemplate({ name: fullname, email:email, subject:subject, message: message }),
     });
 
     return res.status(200).json(data);
