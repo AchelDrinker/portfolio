@@ -2,8 +2,6 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 
 const TAB_DATA = [
   {
@@ -93,15 +91,7 @@ const AboutSection = () => {
             </TabButton>
           </div>
           <div className="mt-8">
-            <TransitionGroup>
-              {TAB_DATA.map((t) =>
-                tab === t.id ? (
-                  <CSSTransition key={t.id} timeout={500} classNames="fade">
-                    <div>{t.content}</div>
-                  </CSSTransition>
-                ) : null
-              )}
-            </TransitionGroup>
+            {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
       </div>
