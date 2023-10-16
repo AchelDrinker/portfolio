@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Head>
         <title>Hugo Martineu - Portfolio</title>
-        <link rel="icon" type="image/jpg" href="/images/LogoSteam.jpg" />
+        <link rel="icon" href="/images/Logo.ico" />
         <meta name="description" content="Portfolio de Hugo Martineu, développeur et data scientist." />
         <meta name="keywords" content="Hugo Martineu, Data Science, Développement Web, Portfolio" />
       </Head>

@@ -27,7 +27,7 @@ export default function RootLayout({
             "description": "Portfolio de Hugo Martineu, développeur et étudiant à l\'Ecole 42",
             "image": {
               "@type": "ImageObject",
-              "url": "https://hugomartineu.com/public/images/LogoSteam.jpg",
+              "url": "https://hugomartineu.com/public/images/Logo.ico",
               "height": 600,
               "width": 800
             }
